@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-truvine-dev-215b2-authRole",
+      "UnauthRoleArn": "arn:aws:iam::196232693361:role/amplify-truvine-dev-215b2-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::196232693361:role/amplify-truvine-dev-215b2-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-truvine-dev-215b2-deployment",
+      "UnauthRoleName": "amplify-truvine-dev-215b2-unauthRole",
+      "StackName": "amplify-truvine-dev-215b2",
+      "StackId": "arn:aws:cloudformation:eu-west-2:196232693361:stack/amplify-truvine-dev-215b2/420993a0-5741-11f0-ab59-0a6ede5139a5",
+      "AmplifyAppId": "d37olb65m1f0vy"
+    },
+    "categories": {
+      "auth": {
+        "truvine80f9041c": {}
+      }
+    }
+  }
+}
