@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 // import { Auth } from 'aws-amplify';
 
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AmplifyAuthenticatorModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })

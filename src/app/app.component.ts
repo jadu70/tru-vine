@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
+import { LandingComponent } from "./landing/landing.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AmplifyAuthenticatorModule],
+  imports: [RouterOutlet, LandingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
