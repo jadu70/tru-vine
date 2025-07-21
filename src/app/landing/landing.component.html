@@ -1,5 +1,10 @@
 <div class="auth-page-container">
   <amplify-authenticator [hideSignUp]="true">
+     <ng-template amplifySlot="sign-in-header">
+    <div class="signin-logo-header">
+      <img src="assets/truevine_logo.png" alt="True Vine Logo" class="signin-logo" />
+    </div>
+  </ng-template>
   <ng-template
     amplifySlot="authenticated"
     let-user="user"
