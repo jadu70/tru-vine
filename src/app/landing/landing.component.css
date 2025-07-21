@@ -75,3 +75,15 @@ html, body {
   object-fit: cover;
   display: block;
 }
+
+.signin-logo-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem; /* Add space at the top */
+}
+
+.signin-logo {
+  height: 60px;
+  max-width: 80%;
+  object-fit: contain;
+}
