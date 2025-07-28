@@ -1,0 +1,10 @@
+{
+  "resourceName": "truVineTable",
+  "tableName": "truVineTable",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

@@ -1,4 +1,20 @@
 {
+  "api": {
+    "truVineApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "TruVineItemHandler"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "truvine80f9041c": {
       "customAuth": false,
@@ -25,6 +41,51 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "TruVineItemHandler": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "truVineTable"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_TruVineItemHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "TruVineItemHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_TruVineItemHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "TruVineItemHandler"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "truVineTable": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
     }
   }
 }
