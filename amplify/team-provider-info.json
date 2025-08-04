@@ -19,7 +19,11 @@
       "function": {
         "TruVineItemHandler": {
           "deploymentBucketName": "amplify-truvine-dev-215b2-deployment",
-          "s3Key": "amplify-builds/TruVineItemHandler-39676e4a34496672394b-build.zip"
+          "s3Key": "amplify-builds/TruVineItemHandler-43394d707669326c4937-build.zip"
+        },
+        "tvUserManagement": {
+          "deploymentBucketName": "amplify-truvine-dev-215b2-deployment",
+          "s3Key": "amplify-builds/tvUserManagement-443449436c5776456657-build.zip"
         }
       },
       "storage": {

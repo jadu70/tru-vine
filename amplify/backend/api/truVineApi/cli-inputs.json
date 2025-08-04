@@ -3,9 +3,15 @@
   "paths": {
     "/items": {
       "name": "/items",
-      "lambdaFunction": "TruVineItemHandler",
+      "lambdaFunction": "tvUserManagement",
       "permissions": {
-        "setting": "open"
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
       }
     }
   }
