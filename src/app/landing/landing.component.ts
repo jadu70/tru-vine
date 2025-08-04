@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
-// import { Auth } from 'aws-amplify';
-
+import { ServerCommsService } from '../server-comms.service';
 
 @Component({
   selector: 'app-landing',
@@ -11,20 +10,24 @@ import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
-export class LandingComponent {
-// username: string = '';
+export class LandingComponent implements OnInit {
+  private serverCommsService = inject(ServerCommsService);
+  private destroyRef = inject(DestroyRef);
+  error = signal('');
 
-//   async ngOnInit() {
-//     try {
-//       const user = await Auth.currentAuthenticatedUser();
-//       this.username = user.username;
-//     } catch (err) {
-//       console.error('User not signed in', err);
-//     }
-//   }
+  ngOnInit() {
+    const subscription = this.serverCommsService.fetchClientData().subscribe({
+      next: (resData) => {
+        console.log(resData);
+      },
+      error: (error) => {
+        console.log(error.message);
+        // this.error.set("Something went wrong getting the data!");
+      }
+    });
 
-//   async signOut() {
-//     await Auth.signOut();
-//     window.location.reload();
-//   }
+    this.destroyRef.onDestroy(() => {
+      subscription.unsubscribe();
+    });
+  }
 }
