@@ -21,9 +21,9 @@ export class ServerCommsService {
   
     // 1. Get the current authenticated user's session (which contains the JWT)
     return from(fetchAuthSession()).pipe(
-      // tap((session) => {
-      //   console.log('Angular: fetchAuthSession result:', session);
-      // }),
+      tap((session) => {
+        console.log('Angular: fetchAuthSession result:', session);
+      }),
       switchMap((session) => {
         // In V6, the session object has a 'tokens' property
         if (!session.tokens || !session.tokens.accessToken) {
